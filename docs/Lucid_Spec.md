@@ -231,7 +231,7 @@ Type matching rules:
 
 ---
 
-## 7. Expressions (VERY DETAILED)
+## 7. Expressions
 
 ### Operators
 
@@ -289,7 +289,7 @@ Type matching rules:
 
 ---
 
-## 8. Input & Output (FULL RUNTIME RULES)
+## 8. Input & Output
 
 ### INPUT
 Syntax:

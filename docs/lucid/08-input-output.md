@@ -1,4 +1,4 @@
-## 8. Input & Output (FULL RUNTIME RULES)
+## 8. Input & Output
 
 ### INPUT
 Syntax:

@@ -1,4 +1,4 @@
-## 7. Expressions (VERY DETAILED)
+## 7. Expressions
 
 ### Operators
 
