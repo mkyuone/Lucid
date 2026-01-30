@@ -3,15 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "main": "dist/cli/main.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "start": "node dist/cli/main.js",
-    "dev": "tsc -p tsconfig.json --watch"
+    "dev": "tsc -p tsconfig.json --watch",
+    "build:bin": "npm run build && pkg -t node18-linux-x64,node18-macos-x64,node18-macos-arm64,node18-win-x64 -o dist-bin/prescribe ."
   },
   "bin": {
     "prescribe": "dist/cli/main.js"
   },
+  "pkg": {
+    "targets": [
+      "node18-linux-x64",
+      "node18-macos-x64",
+      "node18-macos-arm64",
+      "node18-win-x64"
+    ],
+    "outputPath": "dist-bin"
+  },
   "devDependencies": {
+    "pkg": "^5.8.1",
     "typescript": "^5.5.4",
     "@types/node": "^22.10.2"
   }

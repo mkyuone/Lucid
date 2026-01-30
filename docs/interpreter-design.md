@@ -222,6 +222,13 @@ node dist/cli/main.js <file.prsd>
 
 Input is read from stdin as whitespace-delimited tokens. Output is written to stdout.
 
+### Bundled CLI (no local Node)
+```bash
+npm run build:bin
+```
+
+Builds platform-specific binaries in `dist-bin/` using a bundled Node runtime.
+
 ### Error format
 `<ErrorType> at line <lineNumber>: <message>`
 

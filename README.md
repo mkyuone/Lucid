@@ -22,6 +22,15 @@ node dist/cli/main.js <file.prsd>
 
 Input is read from stdin as whitespace-delimited tokens. Output is written to stdout.
 
+### Build a runtime-free CLI (bundled Node)
+```bash
+npm run build:bin
+```
+
+Outputs platform binaries to `dist-bin/` (actual names include a platform suffix).
+
+These binaries run without a local Node installation.
+
 ### Example
 ```bash
 cat <<'EOF' > /tmp/hello.prsd
