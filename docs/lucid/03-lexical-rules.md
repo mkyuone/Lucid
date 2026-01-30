@@ -14,16 +14,16 @@
 - The only non-ASCII character permitted in source code is the assignment arrow `←`.
 - Non-ASCII characters may appear in runtime strings only via escape sequences.
 
-### Lucid Document (.ludd) file format
-- A `.ludd` file is a human-readable companion document format for Lucid.
-- It is not executable and is ignored by the Lucid interpreter/compiler.
+### Prescribe Document (.prsd) file format
+- A `.prsd` file is a human-readable companion document format for Prescribe.
+- It is not executable and is ignored by the Prescribe interpreter/compiler.
 - Encoding is UTF-8, with Unix (`\n`) or Windows (`\r\n`) line endings.
-- A `.ludd` file begins with a header line: `LUDD 1.0`.
+- A `.prsd` file begins with a header line: `PRSD 1.0`.
 - The file contains a sequence of **sections**. A section starts with a line: `## <Title>`.
 - Section content is plain text, except for **code blocks**:
   - A code block starts with a line: `:::lucid`
   - It ends with a line: `:::`
-  - The block content is treated as Lucid source code and may be parsed independently.
+  - The block content is treated as Prescribe source code and may be parsed independently.
 - Any text outside code blocks is treated as documentation and has no defined semantics.
 
 ### Comments

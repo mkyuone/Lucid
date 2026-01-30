@@ -1,23 +1,23 @@
-# Lucid: Executable Pseudocode for Learning Algorithms
+# Prescribe: Executable Pseudocode for Learning Algorithms
 
 ## 1. Introduction
 
-**Tagline:** *Lucid is Cambridge-style pseudocode that actually runs.*
+**Tagline:** *Prescribe is Cambridge-style pseudocode that actually runs.*
 
-Lucid is a small, deterministic, statically typed programming language designed for teaching algorithms. Its syntax and layout follow the Cambridge A Level pseudocode conventions, but every rule is specified precisely so programs can be executed by an interpreter or compiler.
+Prescribe is a small, deterministic, statically typed programming language designed for teaching algorithms. Its syntax and layout follow the Cambridge A Level pseudocode conventions, but every rule is specified precisely so programs can be executed by an interpreter or compiler.
 
 **Who it is for**
 - **Students** learning algorithms who need a readable, exam‑style language.
 - **Teachers** who want executable pseudocode that matches classroom notation.
 - **Interpreter implementers** who need a complete, unambiguous specification.
 
-**How Lucid differs from Python**
+**How Prescribe differs from Python**
 - Static typing with explicit declarations; no dynamic type changes.
 - No implicit type conversions.
 - Deterministic input parsing and output formatting rules.
 - Explicit program entry point (`PROGRAM ... ENDPROGRAM`).
 
-**How Lucid differs from informal pseudocode**
+**How Prescribe differs from informal pseudocode**
 - Every construct has defined syntax and semantics.
 - Precise type system and runtime errors.
 - Formal grammar suitable for a parser.
@@ -57,7 +57,7 @@ ENDPROGRAM
 
 ## 2. Program Structure
 
-A Lucid program has exactly one entry point and must follow this structure:
+A Prescribe program has exactly one entry point and must follow this structure:
 
 ```lucid
 PROGRAM <Identifier>
@@ -95,16 +95,16 @@ ENDPROGRAM
 - The only non-ASCII character permitted in source code is the assignment arrow `←`.
 - Non-ASCII characters may appear in runtime strings only via escape sequences.
 
-### Lucid Document (.ludd) file format
-- A `.ludd` file is a human-readable companion document format for Lucid.
-- It is not executable and is ignored by the Lucid interpreter/compiler.
+### Prescribe Document (.prsd) file format
+- A `.prsd` file is a human-readable companion document format for Prescribe.
+- It is not executable and is ignored by the Prescribe interpreter/compiler.
 - Encoding is UTF-8, with Unix (`\n`) or Windows (`\r\n`) line endings.
-- A `.ludd` file begins with a header line: `LUDD 1.0`.
+- A `.prsd` file begins with a header line: `PRSD 1.0`.
 - The file contains a sequence of **sections**. A section starts with a line: `## <Title>`.
 - Section content is plain text, except for **code blocks**:
   - A code block starts with a line: `:::lucid`
   - It ends with a line: `:::`
-  - The block content is treated as Lucid source code and may be parsed independently.
+  - The block content is treated as Prescribe source code and may be parsed independently.
 - Any text outside code blocks is treated as documentation and has no defined semantics.
 
 ### Comments
@@ -152,7 +152,7 @@ ENDPROGRAM
 
 ## 4. Type System (STATIC)
 
-Lucid is statically typed. Every variable has a declared type. There are **no implicit type conversions**.
+Prescribe is statically typed. Every variable has a declared type. There are **no implicit type conversions**.
 
 | Type | Definition and runtime behavior |
 |------|---------------------------------|

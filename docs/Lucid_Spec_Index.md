@@ -1,5 +1,5 @@
-# Lucid: Executable Pseudocode for Learning Algorithms
-## Lucid Specification Index
+# Prescribe: Executable Pseudocode for Learning Algorithms
+## Prescribe Specification Index
 - [1. Introduction](./lucid/01-introduction.md)
 - [2. Program Structure](./lucid/02-program-structure.md)
 - [3. Lexical Rules](./lucid/03-lexical-rules.md)

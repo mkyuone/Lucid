@@ -1,6 +1,6 @@
 ## 4. Type System (STATIC)
 
-Lucid is statically typed. Every variable has a declared type. There are **no implicit type conversions**.
+Prescribe is statically typed. Every variable has a declared type. There are **no implicit type conversions**.
 
 | Type | Definition and runtime behavior |
 |------|---------------------------------|

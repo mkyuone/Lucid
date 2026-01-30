@@ -1,6 +1,6 @@
 ## 2. Program Structure
 
-A Lucid program has exactly one entry point and must follow this structure:
+A Prescribe program has exactly one entry point and must follow this structure:
 
 ```lucid
 PROGRAM <Identifier>
