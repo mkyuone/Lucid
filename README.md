@@ -1,5 +1,9 @@
 # Prescribe
 Executable pseudocode for learning algorithms.
+> [!NOTE]
+> Work in progress.  
+> Built with help from ChatGPT Codex.
+
 
 Source files must use the `.prsd` format (see `docs/prescribe/03-lexical-rules.md`).
 
