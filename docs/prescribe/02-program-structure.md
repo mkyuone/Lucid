@@ -2,7 +2,7 @@
 
 A Prescribe program has exactly one entry point and must follow this structure:
 
-```lucid
+```prescribe
 PROGRAM <Identifier>
     <declarations>
     <statements>

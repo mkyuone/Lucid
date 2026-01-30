@@ -1,7 +1,7 @@
 ## 14. OOP System
 
 ### Class syntax
-```lucid
+```prescribe
 CLASS Person
     PRIVATE
         Name : STRING
@@ -21,7 +21,7 @@ ENDCLASS
 ```
 
 ### Instantiation
-```lucid
+```prescribe
 DECLARE P : Person
 P <- NEW Person("Ada")
 ```

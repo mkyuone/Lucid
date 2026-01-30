@@ -21,7 +21,7 @@
 - A `.prsd` file begins with a header line: `PRSD 1.0`.
 - The file contains a sequence of **sections**. A section starts with a line: `## <Title>`.
 - Section content is plain text, except for **code blocks**:
-  - A code block starts with a line: `:::lucid`
+  - A code block starts with a line: `:::prescribe`
   - It ends with a line: `:::`
   - The block content is treated as Prescribe source code and may be parsed independently.
 - Any text outside code blocks is treated as documentation and has no defined semantics.

@@ -5,7 +5,7 @@
 - **FUNCTION** returns a value of a declared type.
 
 ### Procedure syntax
-```lucid
+```prescribe
 PROCEDURE Name(<params>)
     <declarations>
     <statements>
@@ -13,7 +13,7 @@ ENDPROCEDURE
 ```
 
 ### Function syntax
-```lucid
+```prescribe
 FUNCTION Name(<params>) RETURNS <Type>
     <declarations>
     <statements>
@@ -22,7 +22,7 @@ ENDFUNCTION
 ```
 
 ### CALL statement
-```lucid
+```prescribe
 CALL Name(<arguments>)
 ```
 - `CALL` is only valid for procedures. Using `CALL` on a function raises `TypeError`.
@@ -33,7 +33,7 @@ CALL Name(<arguments>)
 - `BYVAL` (copy in) and `BYREF` (reference).
 - Default is `BYVAL`.
 - Example:
-```lucid
+```prescribe
 PROCEDURE Swap(BYREF X : INTEGER, BYREF Y : INTEGER)
 ```
 - `BYREF` arguments must be lvalues; otherwise `TypeError`.

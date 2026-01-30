@@ -1,7 +1,7 @@
 ## 9. Control Flow
 
 ### IF / ELSE / ENDIF
-```lucid
+```prescribe
 IF <condition> THEN
     <statements>
 ELSE
@@ -12,7 +12,7 @@ ENDIF
 - `ELSE` is optional.
 
 ### CASE / ENDCASE
-```lucid
+```prescribe
 CASE OF <expression>
     <value-list> : <statements>
     <value-range> : <statements>
@@ -28,7 +28,7 @@ ENDCASE
 - A value may not appear in more than one branch; otherwise `SyntaxError`.
 
 ### FOR / NEXT
-```lucid
+```prescribe
 FOR <identifier> <- <start> TO <end> [STEP <step>]
     <statements>
 NEXT <identifier>
@@ -41,7 +41,7 @@ NEXT <identifier>
 - The loop variable, `start`, `end`, and `step` must be INTEGER.
 
 ### WHILE
-```lucid
+```prescribe
 WHILE <condition> DO
     <statements>
 ENDWHILE
@@ -50,7 +50,7 @@ ENDWHILE
 - `<condition>` must be BOOLEAN.
 
 ### REPEAT UNTIL
-```lucid
+```prescribe
 REPEAT
     <statements>
 UNTIL <condition>

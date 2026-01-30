@@ -33,7 +33,7 @@ Prescribe is a small, deterministic, statically typed programming language desig
 - Teaching-focused error messages  
 
 **Complete example program**
-```lucid
+```prescribe
 PROGRAM AverageScores
     DECLARE Count : INTEGER
     DECLARE Sum : INTEGER
@@ -59,7 +59,7 @@ ENDPROGRAM
 
 A Prescribe program has exactly one entry point and must follow this structure:
 
-```lucid
+```prescribe
 PROGRAM <Identifier>
     <declarations>
     <statements>
@@ -102,7 +102,7 @@ ENDPROGRAM
 - A `.prsd` file begins with a header line: `PRSD 1.0`.
 - The file contains a sequence of **sections**. A section starts with a line: `## <Title>`.
 - Section content is plain text, except for **code blocks**:
-  - A code block starts with a line: `:::lucid`
+  - A code block starts with a line: `:::prescribe`
   - It ends with a line: `:::`
   - The block content is treated as Prescribe source code and may be parsed independently.
 - Any text outside code blocks is treated as documentation and has no defined semantics.
@@ -184,26 +184,26 @@ Additional type rules:
 
 ### Variable declarations
 Syntax:
-```lucid
+```prescribe
 DECLARE <Identifier> : <Type>
 ```
 
 Example:
-```lucid
+```prescribe
 DECLARE Counter : INTEGER
 DECLARE Name : STRING
 ```
 
 ### Constants
 Syntax:
-```lucid
+```prescribe
 CONSTANT <Identifier> = <Expression>
 ```
 - The expression must be a compile‑time constant.
   - Allowed: literals, other constants, and operators over those values.
 
 Example:
-```lucid
+```prescribe
 CONSTANT MaxSize = 100
 ```
 
@@ -239,7 +239,7 @@ CONSTANT MaxSize = 100
 Assignment uses `<-` (ASCII) or `←` (Unicode). Both are equivalent.
 
 Syntax:
-```lucid
+```prescribe
 <lvalue> <- <expression>
 ```
 
@@ -340,7 +340,7 @@ Type matching rules:
 - Field access evaluates the base expression before selecting the field.
 
 Example (evaluation order):
-```lucid
+```prescribe
 X <- F(A(), B()) + C(D(), E())
 ```
 Order: `A()`, `B()`, `F(...)`, `D()`, `E()`, `C(...)`, then `+`.
@@ -351,7 +351,7 @@ Order: `A()`, `B()`, `F(...)`, `D()`, `E()`, `C(...)`, then `+`.
 
 ### INPUT
 Syntax:
-```lucid
+```prescribe
 INPUT <variable1>, <variable2>, ...
 ```
 
@@ -371,7 +371,7 @@ Runtime behavior:
 
 ### OUTPUT
 Syntax:
-```lucid
+```prescribe
 OUTPUT <expression1>, <expression2>, ...
 ```
 
@@ -394,7 +394,7 @@ Conversion rules:
 ## 9. Control Flow
 
 ### IF / ELSE / ENDIF
-```lucid
+```prescribe
 IF <condition> THEN
     <statements>
 ELSE
@@ -405,7 +405,7 @@ ENDIF
 - `ELSE` is optional.
 
 ### CASE / ENDCASE
-```lucid
+```prescribe
 CASE OF <expression>
     <value-list> : <statements>
     <value-range> : <statements>
@@ -421,7 +421,7 @@ ENDCASE
 - A value may not appear in more than one branch; otherwise `SyntaxError`.
 
 ### FOR / NEXT
-```lucid
+```prescribe
 FOR <identifier> <- <start> TO <end> [STEP <step>]
     <statements>
 NEXT <identifier>
@@ -434,7 +434,7 @@ NEXT <identifier>
 - The loop variable, `start`, `end`, and `step` must be INTEGER.
 
 ### WHILE
-```lucid
+```prescribe
 WHILE <condition> DO
     <statements>
 ENDWHILE
@@ -443,7 +443,7 @@ ENDWHILE
 - `<condition>` must be BOOLEAN.
 
 ### REPEAT UNTIL
-```lucid
+```prescribe
 REPEAT
     <statements>
 UNTIL <condition>
@@ -456,7 +456,7 @@ UNTIL <condition>
 ## 10. Arrays
 
 ### Syntax
-```lucid
+```prescribe
 DECLARE A : ARRAY[1:10] OF INTEGER
 DECLARE M : ARRAY[1:3, 1:4] OF REAL
 ```
@@ -478,7 +478,7 @@ DECLARE M : ARRAY[1:3, 1:4] OF REAL
 - **FUNCTION** returns a value of a declared type.
 
 ### Procedure syntax
-```lucid
+```prescribe
 PROCEDURE Name(<params>)
     <declarations>
     <statements>
@@ -486,7 +486,7 @@ ENDPROCEDURE
 ```
 
 ### Function syntax
-```lucid
+```prescribe
 FUNCTION Name(<params>) RETURNS <Type>
     <declarations>
     <statements>
@@ -495,7 +495,7 @@ ENDFUNCTION
 ```
 
 ### CALL statement
-```lucid
+```prescribe
 CALL Name(<arguments>)
 ```
 - `CALL` is only valid for procedures. Using `CALL` on a function raises `TypeError`.
@@ -506,7 +506,7 @@ CALL Name(<arguments>)
 - `BYVAL` (copy in) and `BYREF` (reference).
 - Default is `BYVAL`.
 - Example:
-```lucid
+```prescribe
 PROCEDURE Swap(BYREF X : INTEGER, BYREF Y : INTEGER)
 ```
 - `BYREF` arguments must be lvalues; otherwise `TypeError`.
@@ -528,7 +528,7 @@ PROCEDURE Swap(BYREF X : INTEGER, BYREF Y : INTEGER)
 ## 12. User‑Defined Types
 
 ### Enumerated types
-```lucid
+```prescribe
 TYPE Season = (Spring, Summer, Autumn, Winter)
 ```
 - Ordinals start at 0 in declaration order.
@@ -536,7 +536,7 @@ TYPE Season = (Spring, Summer, Autumn, Winter)
 - `ENUMVALUE(TypeName, ordinal)` returns the enum value or raises `RangeError`.
 
 ### Records
-```lucid
+```prescribe
 TYPE StudentRecord = RECORD
     LastName : STRING
     FirstName : STRING
@@ -549,7 +549,7 @@ ENDRECORD
 - Records are copied by value on assignment; POINTER and CLASS fields copy references.
 
 ### Sets
-```lucid
+```prescribe
 TYPE Day = (Mon, Tue, Wed, Thu, Fri, Sat, Sun)
 TYPE DaySet = SET OF Day
 ```
@@ -560,7 +560,7 @@ TYPE DaySet = SET OF Day
 - All set operations require operands of the same base enum type.
 
 ### Pointers
-```lucid
+```prescribe
 TYPE TIntPointer = POINTER TO INTEGER
 DECLARE P : TIntPointer
 P <- NULL
@@ -581,7 +581,7 @@ P <- NEW INTEGER
 ### Text files
 
 **Open/close**
-```lucid
+```prescribe
 DECLARE F : TEXTFILE
 OPENFILE(F, "path.txt", "READ")
 OPENFILE(F, "path.txt", "WRITE")
@@ -590,7 +590,7 @@ CLOSEFILE(F)
 ```
 
 **Read/write**
-```lucid
+```prescribe
 READFILE(F, X)
 WRITEFILE(F, X)
 EOF(F)
@@ -615,13 +615,13 @@ File error cases:
 ### Random files
 
 **Open**
-```lucid
+```prescribe
 DECLARE RF : RANDOMFILE OF StudentRecord
 OPENFILE(RF, "data.dat", "RANDOM")
 ```
 
 **Access**
-```lucid
+```prescribe
 SEEK(F, address)
 GETRECORD(F, R)
 PUTRECORD(F, R)
@@ -642,7 +642,7 @@ Runtime behavior:
 ## 14. OOP System
 
 ### Class syntax
-```lucid
+```prescribe
 CLASS Person
     PRIVATE
         Name : STRING
@@ -662,7 +662,7 @@ ENDCLASS
 ```
 
 ### Instantiation
-```lucid
+```prescribe
 DECLARE P : Person
 P <- NEW Person("Ada")
 ```
@@ -920,7 +920,7 @@ letter          = "A" | ... | "Z" | "a" | ... | "z" ;
 These are minimal, must-pass programs for a compliant implementation.
 
 **Expressions**
-```lucid
+```prescribe
 PROGRAM ExprTest
     DECLARE A : INTEGER
     A <- 7 DIV 3
@@ -929,7 +929,7 @@ ENDPROGRAM
 ```
 
 **Control flow**
-```lucid
+```prescribe
 PROGRAM LoopTest
     DECLARE I : INTEGER
     FOR I <- 1 TO 3
@@ -939,7 +939,7 @@ ENDPROGRAM
 ```
 
 **Procedures and functions**
-```lucid
+```prescribe
 PROGRAM CallTest
     OUTPUT Inc(5)
 ENDPROGRAM
@@ -950,7 +950,7 @@ ENDFUNCTION
 ```
 
 **Files**
-```lucid
+```prescribe
 PROGRAM FileTest
     DECLARE F : TEXTFILE
     OPENFILE(F, "t.txt", "WRITE")
@@ -960,7 +960,7 @@ ENDPROGRAM
 ```
 
 **OOP**
-```lucid
+```prescribe
 PROGRAM OopTest
     DECLARE P : Person
     P <- NEW Person("Ada")

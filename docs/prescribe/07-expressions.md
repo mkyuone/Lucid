@@ -83,7 +83,7 @@
 - Field access evaluates the base expression before selecting the field.
 
 Example (evaluation order):
-```lucid
+```prescribe
 X <- F(A(), B()) + C(D(), E())
 ```
 Order: `A()`, `B()`, `F(...)`, `D()`, `E()`, `C(...)`, then `+`.

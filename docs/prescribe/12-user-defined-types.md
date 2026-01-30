@@ -1,7 +1,7 @@
 ## 12. User‑Defined Types
 
 ### Enumerated types
-```lucid
+```prescribe
 TYPE Season = (Spring, Summer, Autumn, Winter)
 ```
 - Ordinals start at 0 in declaration order.
@@ -9,7 +9,7 @@ TYPE Season = (Spring, Summer, Autumn, Winter)
 - `ENUMVALUE(TypeName, ordinal)` returns the enum value or raises `RangeError`.
 
 ### Records
-```lucid
+```prescribe
 TYPE StudentRecord = RECORD
     LastName : STRING
     FirstName : STRING
@@ -22,7 +22,7 @@ ENDRECORD
 - Records are copied by value on assignment; POINTER and CLASS fields copy references.
 
 ### Sets
-```lucid
+```prescribe
 TYPE Day = (Mon, Tue, Wed, Thu, Fri, Sat, Sun)
 TYPE DaySet = SET OF Day
 ```
@@ -33,7 +33,7 @@ TYPE DaySet = SET OF Day
 - All set operations require operands of the same base enum type.
 
 ### Pointers
-```lucid
+```prescribe
 TYPE TIntPointer = POINTER TO INTEGER
 DECLARE P : TIntPointer
 P <- NULL

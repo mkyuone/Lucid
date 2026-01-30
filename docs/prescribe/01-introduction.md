@@ -31,7 +31,7 @@ Prescribe is a small, deterministic, statically typed programming language desig
 - Teaching-focused error messages  
 
 **Complete example program**
-```lucid
+```prescribe
 PROGRAM AverageScores
     DECLARE Count : INTEGER
     DECLARE Sum : INTEGER

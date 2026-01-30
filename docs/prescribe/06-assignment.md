@@ -3,7 +3,7 @@
 Assignment uses `<-` (ASCII) or `←` (Unicode). Both are equivalent.
 
 Syntax:
-```lucid
+```prescribe
 <lvalue> <- <expression>
 ```
 

@@ -3,7 +3,7 @@
 ### Text files
 
 **Open/close**
-```lucid
+```prescribe
 DECLARE F : TEXTFILE
 OPENFILE(F, "path.txt", "READ")
 OPENFILE(F, "path.txt", "WRITE")
@@ -12,7 +12,7 @@ CLOSEFILE(F)
 ```
 
 **Read/write**
-```lucid
+```prescribe
 READFILE(F, X)
 WRITEFILE(F, X)
 EOF(F)
@@ -37,13 +37,13 @@ File error cases:
 ### Random files
 
 **Open**
-```lucid
+```prescribe
 DECLARE RF : RANDOMFILE OF StudentRecord
 OPENFILE(RF, "data.dat", "RANDOM")
 ```
 
 **Access**
-```lucid
+```prescribe
 SEEK(F, address)
 GETRECORD(F, R)
 PUTRECORD(F, R)

@@ -2,7 +2,7 @@
 
 ### INPUT
 Syntax:
-```lucid
+```prescribe
 INPUT <variable1>, <variable2>, ...
 ```
 
@@ -22,7 +22,7 @@ Runtime behavior:
 
 ### OUTPUT
 Syntax:
-```lucid
+```prescribe
 OUTPUT <expression1>, <expression2>, ...
 ```
 

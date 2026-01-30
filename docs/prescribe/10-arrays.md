@@ -1,7 +1,7 @@
 ## 10. Arrays
 
 ### Syntax
-```lucid
+```prescribe
 DECLARE A : ARRAY[1:10] OF INTEGER
 DECLARE M : ARRAY[1:3, 1:4] OF REAL
 ```

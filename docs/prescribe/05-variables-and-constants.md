@@ -2,26 +2,26 @@
 
 ### Variable declarations
 Syntax:
-```lucid
+```prescribe
 DECLARE <Identifier> : <Type>
 ```
 
 Example:
-```lucid
+```prescribe
 DECLARE Counter : INTEGER
 DECLARE Name : STRING
 ```
 
 ### Constants
 Syntax:
-```lucid
+```prescribe
 CONSTANT <Identifier> = <Expression>
 ```
 - The expression must be a compile‑time constant.
   - Allowed: literals, other constants, and operators over those values.
 
 Example:
-```lucid
+```prescribe
 CONSTANT MaxSize = 100
 ```
 

@@ -3,7 +3,7 @@
 These are minimal, must-pass programs for a compliant implementation.
 
 **Expressions**
-```lucid
+```prescribe
 PROGRAM ExprTest
     DECLARE A : INTEGER
     A <- 7 DIV 3
@@ -12,7 +12,7 @@ ENDPROGRAM
 ```
 
 **Control flow**
-```lucid
+```prescribe
 PROGRAM LoopTest
     DECLARE I : INTEGER
     FOR I <- 1 TO 3
@@ -22,7 +22,7 @@ ENDPROGRAM
 ```
 
 **Procedures and functions**
-```lucid
+```prescribe
 PROGRAM CallTest
     OUTPUT Inc(5)
 ENDPROGRAM
@@ -33,7 +33,7 @@ ENDFUNCTION
 ```
 
 **Files**
-```lucid
+```prescribe
 PROGRAM FileTest
     DECLARE F : TEXTFILE
     OPENFILE(F, "t.txt", "WRITE")
@@ -43,7 +43,7 @@ ENDPROGRAM
 ```
 
 **OOP**
-```lucid
+```prescribe
 PROGRAM OopTest
     DECLARE P : Person
     P <- NEW Person("Ada")
